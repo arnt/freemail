@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# this script takes one argument, a name, and looks for domains that
+# share mail/name servers with their .com equivalent. running it for
+# 'yahoo' checks whether yahoo.co.uk, yahoo.fr, yahoo.it, yahoo.ly,
+# yahoo.td and so on share nameservers with yahoo.com, and prints
+# those domains that do.
+
+if [ -s "$(grep $1'\.com$' < freemail.txt)" ]; then
+    mother=$1'.com'
+else
+    mother=$(grep $1'\.' < freemail.txt | head -1)
+fi
+
+dig +short $mother MX | sort > /tmp/mx-$mother
+dig +short $mother NS | sort > /tmp/ns-$mother
+for d in $(cat cctlds freemail.txt | sed 's/^[^\.]*\.//' | grep . | sort -u) ; do
+    candidate=$1.$d
+    if [ -n "$(dig +short www.$candidate A)" ]; then
+	dig +short $candidate MX | sort > /tmp/mx-$candidate
+	dig +short $candidate NS | sort > /tmp/ns-$candidate
+	comm -12 /tmp/ns-$mother /tmp/ns-$candidate > /tmp/common-$candidate
+	comm -12 /tmp/mx-$mother /tmp/mx-$candidate >> /tmp/common-$candidate
+	[ -n "$(cat /tmp/common-$candidate)" ] && echo $candidate
+    fi
+done

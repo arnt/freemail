@@ -1,0 +1,6 @@
+#!/bin/sh
+
+curl 'https://www.mail.com/email/' 2>/dev/null | \
+    grep 'href="https:..service.mail.com.registration.html' | \
+    sed -e 's/<\/a>.*//' -e 's/.*>//' | \
+    sort -u | grep -v ' ' | grep '\.' > out/mailcom

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+curl http://workmail.co.za/register.php 2>/dev/null | \
+    grep '<option value=.*\.za"' | \
+    sed -e 's/<\/.*//' -e 's/.*@//'

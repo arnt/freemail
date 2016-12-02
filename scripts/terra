@@ -1,0 +1,7 @@
+#!/bin/sh
+
+curl 'https://correo.terra.com/' 2>/dev/null | \
+    grep '<option value' | \
+    grep @ | \
+    cut -d'"' -f2 | \
+    sort > out/terra

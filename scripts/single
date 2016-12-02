@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cat <<END > out/single
+mail.ru
+END
