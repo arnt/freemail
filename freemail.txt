@@ -29,6 +29,7 @@ aol.com.mx
 aol.com.pr
 aol.com.ru
 aol.com.tr
+aol.com.ve
 aol.co.nz
 aol.co.uk
 aol.co.za
@@ -249,6 +250,7 @@ hotmail.com.ro
 hotmail.com.ru
 hotmail.com.sg
 hotmail.com.tr
+hotmail.com.ve
 hotmail.co.pn
 hotmail.co.th
 hotmail.co.tt
@@ -490,6 +492,7 @@ rocketmail.com.pl
 rocketmail.com.ro
 rocketmail.com.sg
 rocketmail.com.tw
+rocketmail.com.ve
 rocketmail.com.vn
 rocketmail.dk
 rocketmail.es
@@ -643,6 +646,7 @@ yahoo.com.tn
 yahoo.com.tr
 yahoo.com.tw
 yahoo.com.ua
+yahoo.com.ve
 yahoo.com.vn
 yahoo.co.mz
 yahoo.co.nz
@@ -785,6 +789,7 @@ ymail.com.pl
 ymail.com.ro
 ymail.com.sg
 ymail.com.tw
+ymail.com.ve
 ymail.co.nz
 ymail.de
 ymail.eu
