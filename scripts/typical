@@ -6,10 +6,10 @@
 # yahoo.td and so on share nameservers with yahoo.com, and prints
 # those domains that do.
 
-if [ -s "$(grep $1'\.com$' < freemail.txt)" ]; then
+if [ -n "$(grep '^'$1'\.com$' < freemail.txt)" ]; then
     mother=$1'.com'
 else
-    mother=$(grep $1'\.' < freemail.txt | head -1)
+    mother=$(grep '^'$1'\.' < freemail.txt | head -1)
 fi
 
 dig +short $mother MX | sort > /tmp/mx-$mother
