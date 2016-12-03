@@ -155,6 +155,7 @@ gmail.ng
 gmail.re
 gmail.td
 gmail.ug
+gmx.de
 googlemail.com
 googlemail.com.ph
 googlemail.com.pt

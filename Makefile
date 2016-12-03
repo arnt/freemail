@@ -1,4 +1,4 @@
-TYPICAL=139 aol foxmail gmail googlemail hotmail kimo onet outlook qq rocketmail yahoo yandex yeah ymail
+TYPICAL=139 aol foxmail gmail googlemail hotmail kimo onet outlook qq rocketmail yahoo yandex yeah ymail gmx
 
 freemail: single terra workmail mailcom $(TYPICAL)
 	grep -h . out/* | sort -u > freemail.txt
