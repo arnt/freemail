@@ -26,8 +26,10 @@ To add a new service:
 
  - Add it to the ```typicals``` list if it operates a .com domain and
    eponymous other domains using the same name servers (as e.g. Microsoft
-   does for hotmail.com, hotmail.fi etc). If its home domain is not a
-  .com, add the home to freemail.txt as well.
+   does for hotmail.com, hotmail.fi etc). If its main domain is not a
+  .com, add the main domain to freemail.txt as well, as
+  [the commit for gmx.de](https://github.com/arnt/freemail/commit/9c0ac6621cd91ab86a4df80a19a8ac00cff8f912)
+  shows, and rerun make.
 
  - Write a custom script to download its signup form and list the
    domains if it has many (as e.g. mail.com does).
