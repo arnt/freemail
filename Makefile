@@ -1,6 +1,6 @@
-TYPICAL=139 aol foxmail gmail googlemail hotmail kimo onet outlook qq rocketmail yahoo yandex yeah ymail gmx
+TYPICAL=139 aol foxmail gmail googlemail hotmail kimo outlook qq rocketmail yahoo yandex yeah ymail gmx
 
-freemail: single terra workmail mailcom $(TYPICAL)
+freemail: single terra workmail mailcom onet $(TYPICAL)
 	grep -h . out/* | sort -u > freemail.txt
 	git diff freemail.txt out
 
@@ -15,6 +15,9 @@ workmail:
 
 mailcom:
 	scripts/mailcom > out/mailcom
+
+onet:
+	scripts/onet > out/onet
 
 $(TYPICAL):
 	scripts/typical $@ > out/$@

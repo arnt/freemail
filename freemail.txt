@@ -63,6 +63,7 @@ asia-mail.com
 atheist.com
 auctioneer.net
 australiamail.com
+autograf.pl
 bartender.net
 bellair.net
 berlin.com
@@ -185,6 +186,7 @@ gmx.se
 gmx.sg
 gmx.tm
 gmx.tw
+gmx.us
 googlemail.com
 googlemail.com.ph
 googlemail.com.pt
@@ -365,10 +367,9 @@ nycmail.com
 oath.com
 onet.com.pl
 onet.eu
-onet.fm
-onet.it
 onet.pl
-onet.tv
+opoczta.pl
+op.pl
 optician.com
 orthodontist.net
 outlook.at
@@ -452,6 +453,7 @@ photographer.net
 physicist.net
 planetmail.com
 planetmail.net
+poczta.onet.pl
 polandmail.com
 politician.com
 post.com
@@ -529,6 +531,7 @@ sociologist.com
 solution4u.com
 songwriter.net
 spainmail.com
+spoko.pl
 starmail.co.za
 surgical.net
 swedenmail.com
@@ -558,6 +561,8 @@ tvstar.com
 umpire.com
 usa.com
 uymail.com
+vip.onet.pl
+vp.pl
 webmail.co.za
 webname.com
 websurfer.co.za
@@ -588,6 +593,7 @@ yahoo.cg
 yahoo.ch
 yahoo.cl
 yahoo.cm
+yahoo.cn
 yahoo.co
 yahoo.co.at
 yahoo.co.ck
@@ -610,6 +616,7 @@ yahoo.com.bo
 yahoo.com.br
 yahoo.com.by
 yahoo.com.bz
+yahoo.com.cn
 yahoo.com.co
 yahoo.com.dm
 yahoo.com.do

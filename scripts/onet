@@ -1,0 +1,7 @@
+#!/bin/sh
+
+curl -L 'https://konto.onet.pl/register-email.html' 2>/dev/null | \
+    tidy -wrap 300 2>/dev/null | \
+    grep f_login_domain | \
+    sed -e 's/.*">//' -e 's/<.*//' | \
+    sort -u
