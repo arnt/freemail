@@ -2,4 +2,7 @@
 
 cat <<END > out/single
 mail.ru
+web.de
+mac.com
+me.com
 END
