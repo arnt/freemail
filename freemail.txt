@@ -344,6 +344,7 @@ legislator.com
 linuxmail.org
 lobbyist.com
 lovecat.com
+mac.com
 madonnafan.com
 magicmail.co.za
 mailbox.co.za
@@ -351,6 +352,7 @@ mail.com
 mail-me.com
 mail.ru
 marchmail.com
+me.com
 metalfan.com
 mexicomail.com
 minister.com
@@ -411,7 +413,6 @@ outlook.co.nz
 outlook.co.th
 outlook.co.vi
 outlook.cz
-outlook.de
 outlook.dk
 outlook.ec
 outlook.eu
@@ -564,6 +565,7 @@ usa.com
 uymail.com
 vip.onet.pl
 vp.pl
+web.de
 webmail.co.za
 webname.com
 websurfer.co.za
@@ -650,7 +652,6 @@ yahoo.com.ru
 yahoo.com.sa
 yahoo.com.sg
 yahoo.com.sv
-yahoo.com.tn
 yahoo.com.tr
 yahoo.com.tw
 yahoo.com.ua
@@ -768,12 +769,15 @@ yahoo.vg
 yahoo.vn
 yahoo.ws
 yandex.by
+yandex.co.il
 yandex.com
+yandex.com.ge
 yandex.com.kz
 yandex.com.tr
 yandex.com.ua
 yandex.de
 yandex.fi
+yandex.fr
 yandex.it
 yandex.kz
 yandex.pt
@@ -781,6 +785,7 @@ yandex.ru
 yandex.st
 yandex.tj
 yandex.ua
+yandex.uz
 yeah.net
 ymail.cl
 ymail.co.at
