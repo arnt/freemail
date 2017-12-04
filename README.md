@@ -5,7 +5,9 @@ This is a fairly long list of free email domains.
 It's not complete, but if a Nigerian cyberentrepreneur has heard of a
 particular free email service, then that service's domains are probably
 listed here. I use it as a list of domains whose users probably don't know
-each other, which is useful if you want to estimate a social graph.
+each other, which is useful if you want to estimate a social graph. My
+estimate does not need to be 100% correct, so I'm not trying for 100%
+correctness in this list.
 
 To regenerate the list, just run ```make -j50``` and wait for freemail.txt
 to be updated.
