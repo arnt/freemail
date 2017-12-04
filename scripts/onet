@@ -1,7 +1,8 @@
 #!/bin/sh
 
-curl -L 'https://konto.onet.pl/register-email.html' 2>/dev/null | \
-    tidy -wrap 300 2>/dev/null | \
-    grep f_login_domain | \
-    sed -e 's/.*">//' -e 's/<.*//' | \
-    sort -u
+dig onet.pl mx +short | awk '{print $2}' | sort -u > /tmp/onet-correct-$$
+
+for a in autograf.pl onet.com.pl onet.eu onet.pl opoczta.pl op.pl poczta.onet.pl spoko.pl vip.onet.pl vp.pl ; do
+    dig $a mx +short | awk '{print $2}' | sort -u > /tmp/onet-maybe-$$
+    [ -n $(cat /tmp/onet-correct-$$ /tmp/onet-maybe-$$ | sort | uniq -d) ] && echo $a
+done > out/onet
