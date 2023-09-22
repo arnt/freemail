@@ -1,6 +1,4 @@
 #!/bin/sh
 
-curl 'https://www.mail.com/email/' 2>/dev/null | \
-    grep 'href="https:..signup.mail.com' | \
-    sed -e 's/<\/a>.*//' -e 's/.*>//' | \
-    sort -u | grep -v ' ' | grep '\.'
+curl 'https://www.mail.com/mail/create-email-account/' 2>/dev/null | \
+    grep emailDomain | fmt -1 | grep value= | cut -d'"' -f2
