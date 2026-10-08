@@ -6,21 +6,37 @@
 # yahoo.td and so on share nameservers with yahoo.com, and prints
 # those domains that do.
 
+# MX hosts are compared without their priority, and also by their
+# parent domain, because e.g. hotmail.com uses
+# hotmail-com.olc.protection.outlook.com while hotmail.co.uk uses
+# eur.olc.protection.outlook.com. Microsoft and AOL also use a
+# different set of name servers for each domain.
+
 if [ -n "$(grep '^'$1'\.com$' < freemail.txt)" ]; then
     mother=$1'.com'
 else
     mother=$(grep '^'$1'\.' < freemail.txt | head -1)
 fi
 
-dig +short $mother MX | sort > /tmp/mx-$mother
-dig +short $mother NS | sort > /tmp/ns-$mother
-for d in $(cat cctlds freemail.txt | sed 's/^[^\.]*\.//' | grep . | sort -u) ; do
+servers() {
+    dig +short $1 MX | awk '{print $2}' > /tmp/mx-$1
+    sed 's/^[^.]*\.//' < /tmp/mx-$1 | grep '\..*\..*\..*\.' >> /tmp/mx-$1
+    sort -u -o /tmp/mx-$1 /tmp/mx-$1
+    dig +short $1 NS | sort -u > /tmp/ns-$1
+}
+
+servers $mother
+for d in $(cat cctlds slds; sed 's/^[^\.]*\.//' < freemail.txt) ; do
+    echo $d
+done | grep . | sort -u > /tmp/suffixes-$1
+for d in $(cat /tmp/suffixes-$1) ; do
     candidate=$1.$d
-    if [ -n "$(dig +short www.$candidate A)" ]; then
-	dig +short $candidate MX | sort > /tmp/mx-$candidate
-	dig +short $candidate NS | sort > /tmp/ns-$candidate
+    if [ -n "$(dig +short $candidate MX)" ]; then
+	servers $candidate
 	comm -12 /tmp/ns-$mother /tmp/ns-$candidate > /tmp/common-$candidate
 	comm -12 /tmp/mx-$mother /tmp/mx-$candidate >> /tmp/common-$candidate
 	[ -n "$(cat /tmp/common-$candidate)" ] && echo $candidate
     fi
 done
+
+exit 0

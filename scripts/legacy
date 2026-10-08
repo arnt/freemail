@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# this script checks for domains that are still operated by for which
+# new signups are no longer accepted.
+#
+# the arguments are the canonical domains; any domain in freemail.txt
+# that shares an MX with one of the canonical domains is listed.
+
+for a in $* ; do dig $a mx +short ; done | awk '$2 != "." {print $2}' | \
+    sort > /tmp/legacy-ok-$$
+
+for a in $(cat freemail.txt); do
+    dig $a mx +short | awk '{print $2}' > /tmp/legacy-maybe-$$
+    [ -n "$(cat /tmp/legacy-ok-$$ /tmp/legacy-maybe-$$ | sort | uniq -d)" ] && echo $a
+done
+
+exit 0
